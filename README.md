@@ -1,8 +1,3 @@
-# React + Vite
+# CRUD React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este repositório contém uma página web responsiva, que é um sistema de cadastro de produtos, criada por mim como atividade da turma FullStack Live da Digital College. O objetivo da atividade era criar as operações básicas que são Create (criar), Read (ler), Update (atualizar) e Delete (apagar) no React.
