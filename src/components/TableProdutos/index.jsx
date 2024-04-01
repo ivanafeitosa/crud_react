@@ -56,12 +56,19 @@ export default function TableProdutos() {
   const [rows, setRows] = useState([]);
 
   useEffect(()=> {
-    fetch(`https://mocki.io/v1/5156c7cb-649d-42db-bfa2-1052aa558714`)
+    fetch(`http://localhost:3000/products`)
     .then(response => response.json() )
     .then(data => {
       setRows(data);
     } )    
   },[]);
+
+  const deleteProduct = async (id) => {
+    fetch(`http://localhost:3000/products/${id}`, {
+      method: "DELETE"
+    })
+    window.location.reload()
+  }
 
   return (
     <TableContainer component={Paper}>
@@ -87,7 +94,7 @@ export default function TableProdutos() {
                 <Button variant="contained" color="warning" startIcon={<EditIcon />}>Editar</Button>
               </StyledTableCell>
               <StyledTableCell align="center">
-              <Button variant="contained" color="error" startIcon={<DeleteIcon />}>Excluir</Button>
+              <Button variant="contained" color="error" startIcon={<DeleteIcon />} onClick={() => {deleteProduct(row.id)}}>Excluir</Button>
               </StyledTableCell>
             </StyledTableRow>
           ))}

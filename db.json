@@ -1,0 +1,84 @@
+{
+  "products": [
+    {
+      "id": "5",
+      "name": "Mochila Esportiva",
+      "price": 49.99
+    },
+    {
+      "id": "6",
+      "name": "Relógio Digital",
+      "price": 34.99
+    },
+    {
+      "id": "7",
+      "name": "Fones de Ouvido Bluetooth",
+      "price": 24.99
+    },
+    {
+      "id": "8",
+      "name": "Tênis de Corrida",
+      "price": 79.99
+    },
+    {
+      "id": "9",
+      "name": "Jaqueta Corta Vento",
+      "price": 69.99
+    },
+    {
+      "id": "10",
+      "name": "Bolsa Térmica",
+      "price": 14.99
+    },
+    {
+      "id": "11",
+      "name": "Colar de Prata",
+      "price": 49.99
+    },
+    {
+      "id": "12",
+      "name": "Boné Estiloso",
+      "price": 9.99
+    },
+    {
+      "id": "13",
+      "name": "Caderno de Anotações",
+      "price": 7.99
+    },
+    {
+      "id": "14",
+      "name": "Caneca de Café",
+      "price": 5.99
+    },
+    {
+      "id": "15",
+      "name": "Mouse sem Fio",
+      "price": 17.99
+    },
+    {
+      "id": "16",
+      "name": "Capa para Celular",
+      "price": 12.99
+    },
+    {
+      "id": "17",
+      "name": "Carregador Portátil",
+      "price": 29.99
+    },
+    {
+      "id": "18",
+      "name": "Caixa de Som Bluetooth",
+      "price": 39.99
+    },
+    {
+      "id": "19",
+      "name": "Cinto de Couro",
+      "price": 24.99
+    },
+    {
+      "id": "20",
+      "name": "Guarda-chuva Automático",
+      "price": 19.99
+    }
+  ]
+}
