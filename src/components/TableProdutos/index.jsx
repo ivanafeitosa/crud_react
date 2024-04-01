@@ -10,6 +10,8 @@ import Paper from '@mui/material/Paper';
 import { Button } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -35,19 +37,32 @@ function ccyFormat(num) {
     return `${num.toFixed(2)}`;
   }
 
-function createData(id, produto, preco, carbs, protein) {
-  return { id, produto, preco, carbs, protein };
-}
+// function createData(id, produto, preco, carbs, protein) {
+//   return { id, produto, preco, carbs, protein };
+// }
 
-const rows = [
-  createData(1 , 'Furadeira', 150.50),
-  createData(2, 'Ventilador', 50.00),
-  createData(3, 'Geladeira', 2500.00),
-  createData(4, 'Pizza', 39.50),
-  createData(5, 'Toalha de banho', 30.00),
-];
+// const rows = [
+//   createData(1 , 'Furadeira', 150.50),
+//   createData(2, 'Ventilador', 50.00),
+//   createData(3, 'Geladeira', 2500.00),
+//   createData(4, 'Pizza', 39.50),
+//   createData(5, 'Toalha de banho', 30.00),
+// ];
+
+
 
 export default function TableProdutos() {
+
+  const [rows, setRows] = useState([]);
+
+  useEffect(()=> {
+    fetch(`https://mocki.io/v1/5156c7cb-649d-42db-bfa2-1052aa558714`)
+    .then(response => response.json() )
+    .then(data => {
+      setRows(data);
+    } )    
+  },[]);
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -66,8 +81,8 @@ export default function TableProdutos() {
               <StyledTableCell component="th" scope="row">
                 {row.id}
               </StyledTableCell>
-              <StyledTableCell align="center">{row.produto}</StyledTableCell>
-              <StyledTableCell align="center">{ccyFormat(row.preco)}</StyledTableCell>
+              <StyledTableCell align="center">{row.name}</StyledTableCell>
+              <StyledTableCell align="center">{ccyFormat(row.price)}</StyledTableCell>
               <StyledTableCell align="center">
                 <Button variant="contained" color="warning" startIcon={<EditIcon />}>Editar</Button>
               </StyledTableCell>
