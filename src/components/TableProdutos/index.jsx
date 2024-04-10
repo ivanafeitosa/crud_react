@@ -12,7 +12,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { redirect } from 'react-router-dom';
+import { useNavigate, redirect } from 'react-router-dom';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -71,6 +71,11 @@ export default function TableProdutos() {
     window.location.reload()
   }
 
+  const navigate = useNavigate();
+  const fillOutForm = (product) => {
+    navigate('/edit-produtos', {state: {...product}});
+  }
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -92,7 +97,7 @@ export default function TableProdutos() {
               <StyledTableCell align="center">{row.name}</StyledTableCell>
               <StyledTableCell align="center">{ccyFormat(row.price)}</StyledTableCell>
               <StyledTableCell align="center">
-                <Button variant="contained" color="warning" startIcon={<EditIcon />}>Editar</Button>
+                <Button variant="contained" color="warning" startIcon={<EditIcon />} onClick={() => {fillOutForm(row)}}>Editar</Button>
               </StyledTableCell>
               <StyledTableCell align="center">
               <Button variant="contained" color="error" startIcon={<DeleteIcon />} onClick={() => {deleteProduct(row.id)}}>Excluir</Button>

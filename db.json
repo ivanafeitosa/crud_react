@@ -1,14 +1,9 @@
 {
   "products": [
     {
-      "id": "5",
-      "name": "Mochila Esportiva",
-      "price": 49.99
-    },
-    {
       "id": "6",
       "name": "Relógio Digital",
-      "price": 34.99
+      "price": 40
     },
     {
       "id": "7",
