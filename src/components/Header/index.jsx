@@ -12,9 +12,6 @@ const Header = () => {
         <li>
           <NavLink to={"/add-produtos"}>Inserir</NavLink>
         </li>
-        <li>
-          <NavLink to={"/edit-produtos"}>Editar</NavLink>
-        </li>
       </ul>
 
     </header>
