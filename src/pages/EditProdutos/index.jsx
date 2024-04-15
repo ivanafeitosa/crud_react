@@ -27,9 +27,21 @@ const EditProdutos = () => {
 
   const onHandleChange = (e) => {
     const { id, value } = e.target;
-    setFormData({
-      ...formData, [id]: value
-    })
+    
+    if(id == 'price') {
+      const input = e.target.value;
+      if (/^\d*\.?\d{0,2}$/.test(input)) { // Aceita até 2 casas decimais
+        setFormData({
+          ...formData, [id]: value
+        })
+       
+      }
+
+    } else {
+      setFormData({
+        ...formData, [id]: value
+      })
+    }
   }
 
   const editProducts = async () => {
@@ -49,14 +61,11 @@ const EditProdutos = () => {
       <div className="container">        
         <Titulo name={"Editar Produto"} />
         <LinhaQuebra />        
-        {/* <Form name={"Salvar alterações"}/>         */}
-        <form>
-                <TextField id="id" label="Id" variant="outlined" onChange={onHandleChange} value={formData.id} />
-                <TextField id="name" label="Produto" variant="outlined" onChange={onHandleChange} value={formData.name} />        
-                {/* <InputPreco/> */}
-                <TextField id="price" label="Preço" variant="outlined" onChange={onHandleChange} value={formData.price}/>
-                <Button variant="contained" color="primary" onClick={() => editProducts()}>{"Salvar Alterações"}</Button>                
-        </form>
+        <Form 
+          onHandleChange={onHandleChange}
+          editProducts={editProducts}
+          formData={formData}
+        />        
       </div>
     </>
   )
